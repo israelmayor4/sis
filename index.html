@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Sister 🌷</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8edeb;
+            --accent-pink: #fcd5ce;
+            --text-color: #6d6875;
+            --glass-bg: rgba(255, 255, 255, 0.6);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8edeb 0%, #ffd7ba 100%);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        /* Floating Animation */
+        .heart {
+            position: absolute;
+            color: rgba(255, 183, 178, 0.4);
+            font-size: 20px;
+            animation: float 6s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Main Card */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            text-align: center;
+            max-width: 400px;
+            z-index: 1;
+            margin: 20px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #e5989b;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #e6a3a5;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .photo-placeholder {
+            width: 100px;
+            height: 100px;
+            background-color: var(--accent-pink);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 4px solid white;
+        }
+
+        .btn {
+            background-color: #ffb4a2;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            transition: transform 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #e5989b;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 6000);
+        }
+        setInterval(createHeart, 400);
+    </script>
+
+    <div class="card">
+        <div class="photo-placeholder">🌷</div>
+        <h1>Happy Valentine's Day</h1>
+        <h3>To My Wonderful Sister</h3>
+        <p>
+            Thank you for being my constant support and thank you for having faith in me. 
+            Thank you for all the laughs and for always being 
+            the person I can count on. I appreciate you more than words can say. Happy Valentine's Day.
+        </p>
+        <button class="btn" onclick="alert('I love you! ❤️')">Click for a Hug</button>
+    </div>
+
+</body>
+</html>
